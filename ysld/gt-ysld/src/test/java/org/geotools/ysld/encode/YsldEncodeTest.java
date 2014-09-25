@@ -29,7 +29,6 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class YsldEncodeTest {
-    private static final String YamlMap = null;
 
     @Test
     public void testFunction() throws Exception {
