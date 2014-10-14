@@ -1,6 +1,7 @@
 package org.geotools.ysld.encode;
 
 import org.geotools.styling.Symbolizer;
+import org.geotools.ysld.parse.SymbolizerParser;
 
 import java.util.Map;
 
@@ -15,9 +16,8 @@ public abstract class SymbolizerEncoder<S extends Symbolizer> extends YsldEncode
         put("geometry", sym.getGeometry());
         put("uom", sym.getUnitOfMeasure());
         if (!sym.getOptions().isEmpty()) {
-            push("options");
             for (Map.Entry<String,String> kv : sym.getOptions().entrySet()) {
-                put(kv.getKey(), kv.getValue());
+                put(SymbolizerEncoder.OPTION_PREFIX+kv.getKey(), kv.getValue());
             }
         }
     }
