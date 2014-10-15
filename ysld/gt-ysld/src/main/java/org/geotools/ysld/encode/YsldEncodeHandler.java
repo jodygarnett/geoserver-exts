@@ -13,8 +13,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public abstract class YsldEncodeHandler<T> implements Iterator<Object> {
-    public static String OPTION_PREFIX = "-";
-    
     Deque<Map<String,Object>> stack = new ArrayDeque<Map<String, Object>>();
 
     public YsldEncodeHandler() {
